@@ -1,0 +1,66 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+
+  /* Light Mode Variables */
+  --default-ground-light: #000000; 
+  --default-ground-base-light: #ffffff;
+
+  --primary-color-light: #0d6efd;
+  --secondary-color-light: #6c757d;
+  --success-color-light: #198754;
+  --danger-color-light: #dc3545;
+  --warning-color-light: #ffc107;
+  --info-color-light: #0dcaf0;
+  --light-color-light: #f8f9fa;
+  --dark-color-light: #212529;
+
+  /* Dark Mode Variables */
+  --default-ground-dark: #ffffff;
+  --default-ground-base-dark: #000000;
+
+  --primary-color-dark: #0d6efd;
+  --secondary-color-dark: #6c757d;
+  --success-color-dark: #198754;
+  --danger-color-dark: #dc3545;
+  --warning-color-dark: #ffc107;
+  --info-color-dark: #0dcaf0;
+  --light-color-dark: #f8f9fa;
+  --dark-color-dark: #212529;
+}
+
+
+
+
+/* =================================================================================================================== */
+/* Light Mode */
+.light {
+  --default-ground-color: var(--default-ground-light);
+  --default-ground-base-color: var(--default-ground-base-light);
+
+  /* ============== */
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --success-color: var(--success-color-light);
+  --danger-color: var(--danger-color-light);
+  --warning-color: var(--warning-color-light);
+  --info-color: var(--info-color-light);
+  --light-color: var(--light-color-light);
+  --dark-color: var(--dark-color-light);
+}
+
+/* Dark Mode */
+.dark {
+  --default-ground-color: var(--default-ground-dark);
+  --default-ground-base-color: var(--default-ground-base-dark);
+
+  /* ============== */
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  --success-color: var(--success-color-dark);
+  --danger-color: var(--danger-color-dark);
+  --warning-color: var(--warning-color-dark);
+  --info-color: var(--info-color-dark);
+  --light-color: var(--light-color-dark);
+  --dark-color: var(--dark-color-dark);
+}

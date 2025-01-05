@@ -1,0 +1,66 @@
+.btn-w-full {
+  width: 100%;
+}
+
+.main-heading .heading {
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(23, 43, 77);
+  margin-bottom: 5px;
+}
+
+.main-heading .sub-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(23, 43, 77);
+}
+
+.small-heading .heading {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(23, 43, 77);
+  margin-bottom: 5px;
+}
+
+.small-heading .sub-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(23, 43, 77);
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.arco-select.arco-select-focused .arco-select-view {
+  color: var(--color-text-1);
+  background-color: var(--color-bg-2);
+  border-color: none !important;
+  outline: none !important;
+  box-shadow: 0 0 0 0 var(--color-primary-light-2);
+}
+
+.arco-select .arco-select-view {
+  border: none !important;
+}
+
+.arco-select {
+  outline: none !important;
+  font-size: 13px !important;
+  border-radius: 6px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: 2px solid #dee2e6;
+  padding: 0.11rem !important;
+}
+
+.arco-trigger {
+  position: absolute;
+  z-index: 1400 !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
