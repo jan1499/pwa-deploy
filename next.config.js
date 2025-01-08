@@ -1,5 +1,27 @@
-const baseUrl = process.env.BASE_URL ;
-const proxyPrefix = process.env.PROXY_PREFIX ;
+const baseUrl = process.env.BASE_URL;
+const proxyPrefix = process.env.PROXY_PREFIX;
+
+const withPWA = require('next-pwa')({
+    dest: 'public',
+    disable: false,
+    // runtimeCaching: [
+    //     {
+    //         urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/,
+    //         handler: 'CacheFirst',
+    //         options: {
+    //             cacheName: 'google-fonts',
+    //             expiration: {
+    //                 maxEntries: 10,
+    //                 maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+    //             },
+    //         },
+    //     },
+    // ],
+});
+
+module.exports = withPWA({
+    reactStrictMode: true,
+})
 
 module.exports = {
     poweredByHeader: false,

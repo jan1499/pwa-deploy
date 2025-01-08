@@ -2,7 +2,7 @@
 import { Button } from '@/components/common/Button'
 import { Input } from '@/components/common/Input'
 // import Image from 'next/image'
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 // import apple from '../../../../public/images/apple.svg'
 // import google from '../../../../public/images/google.svg'
 // import microsoft from '../../../../public/images/microsoft.svg'
@@ -44,6 +44,21 @@ const Login = () => {
 
         // }
     }
+
+    useEffect(() => {
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker
+                    .register('/sw.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    }, []);
 
     return (
         <div className='login-ba'>

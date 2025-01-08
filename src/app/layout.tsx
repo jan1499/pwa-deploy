@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import '../../public/styles/globals.css'
-import '../../public/styles/style.css'
-import '../../public/styles/utility.css'
-import '../../public/styles/component.css'
-import '../../public/styles/bootstrap.css'
 import "@arco-design/web-react/dist/css/arco.css";
+import type { Metadata } from "next";
+import '../../public/styles/bootstrap.css';
+import '../../public/styles/component.css';
+import '../../public/styles/globals.css';
+import '../../public/styles/style.css';
+import '../../public/styles/utility.css';
 import Main from "./main";
 
 export const metadata: Metadata = {
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+
   return (
     <html lang="en">
       <body>
