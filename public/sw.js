@@ -3,8 +3,13 @@ const urlsToCache = [
     "/",
     "/about",
     "/favicon.ico",
-    "/icons/icon-192x192.png",
-    "/icons/icon-512x512.png",
+    "/pwaicons/icon-192x192.png",
+    "/pwaicons/icon-512x512.png",
+    "/pwaicons/icon-32x32.png",
+    "/pwaicons/icon-16x16.png",
+    "/pwaicons/apple - touch - icon.png",
+    "/src/app/login",
+    "/src/app/signup"
 ];
 
 // Install the service worker and cache files

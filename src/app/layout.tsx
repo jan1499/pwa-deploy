@@ -1,3 +1,4 @@
+import ServiceWorkerRegister from "@/components/common/ServiceWorkerRegister";
 import "@arco-design/web-react/dist/css/arco.css";
 import type { Metadata } from "next";
 import '../../public/styles/bootstrap.css';
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <Main>
+          <ServiceWorkerRegister />
           {children}
         </Main>
       </body>
