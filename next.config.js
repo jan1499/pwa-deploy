@@ -10,10 +10,10 @@ const withPWA = require("next-pwa")({
     cacheOnFrontEndNav: true, // Caches pages navigated on frontend
     runtimeCaching: [
         {
-            urlPattern: /^https:\/\/pwa-deploy-kohl.vercel\.app\/.*/, // Cache all pages
-            handler: "NetworkFirst", // Try network first, then cache
+            urlPattern: /.*\.(?:js|css|html|json|svg)$/,
+            handler: 'CacheFirst',
             options: {
-                cacheName: "html-cache",
+                cacheName: 'static-resources',
                 expiration: {
                     maxEntries: 50,
                     maxAgeSeconds: 60 * 60 * 24, // Cache for 1 day
