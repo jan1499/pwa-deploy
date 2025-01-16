@@ -4,9 +4,13 @@ const urlsToCache = [
     "/signup",
     "/taskflow/your-work",
     "/icon.ico",
-    "/manifest.json",
-    "/layout.tsx",
-    "/page.tsx",
+    "/manifest.ts",
+    // "/styles/global.css",
+    // "/styles/global.css",
+    // "/styles/global.css",
+    // "/styles/global.css",
+    // "/pwaicons/icon-192x192.png",
+    // "/pwaicons/icon-512x512.png"
 ];
 
 self.addEventListener("install", (event) => {
