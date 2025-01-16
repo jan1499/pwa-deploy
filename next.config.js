@@ -46,6 +46,14 @@ const withPWA = require("next-pwa")({
 
 module.exports = withPWA({
     reactStrictMode: true,
+    async rewrites() {
+        return [
+            {
+                source: "/sw.js",
+                destination: "/_next/static/sw.js",
+            },
+        ];
+    },
 });
 
 
