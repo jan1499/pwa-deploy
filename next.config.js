@@ -1,27 +1,53 @@
 const baseUrl = process.env.BASE_URL;
 const proxyPrefix = process.env.PROXY_PREFIX;
 
-// const withPWA = require('next-pwa')({
-//     dest: 'public',
-//     disable: false,
-//     // runtimeCaching: [
-//     //     {
-//     //         urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/,
-//     //         handler: 'CacheFirst',
-//     //         options: {
-//     //             cacheName: 'google-fonts',
-//     //             expiration: {
-//     //                 maxEntries: 10,
-//     //                 maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
-//     //             },
-//     //         },
-//     //     },
-//     // ],
-// });
+const withPWA = require("next-pwa")({
+    dest: "public", // PWA assets will be placed in the public folder
+    register: true, // Registers service worker
+    skipWaiting: true, // Updates service worker immediately
+    disable: process.env.NODE_ENV === "development", // Disable PWA in development mode
+    // disable: false,
+    cacheOnFrontEndNav: true, // Caches pages navigated on frontend
+    runtimeCaching: [
+        {
+            urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com/, // Cache Google Fonts
+            handler: "CacheFirst",
+            options: {
+                cacheName: "google-fonts",
+                expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 365 },
+            },
+        },
+        {
+            urlPattern: /^https:\/\/your-api-url\.com\//, // Cache API responses
+            handler: "NetworkFirst",
+            options: {
+                cacheName: "api-cache",
+                expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 },
+            },
+        },
+        {
+            urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif|webp)/, // Cache images
+            handler: "StaleWhileRevalidate",
+            options: {
+                cacheName: "image-cache",
+                expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+        },
+        {
+            urlPattern: /^https:\/\/cdn.jsdelivr.net/, // Cache external scripts
+            handler: "CacheFirst",
+            options: {
+                cacheName: "jsdelivr-cache",
+                expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+        },
+    ],
+});
 
-// module.exports = withPWA({
-//     reactStrictMode: true,
-// })
+module.exports = withPWA({
+    reactStrictMode: true,
+});
+
 
 module.exports = {
     poweredByHeader: false,
