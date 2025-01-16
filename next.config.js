@@ -5,8 +5,8 @@ const withPWA = require("next-pwa")({
     dest: "public", // PWA assets will be placed in the public folder
     register: true, // Registers service worker
     skipWaiting: true, // Updates service worker immediately
-    disable: process.env.NODE_ENV === "development", // Disable PWA in development mode
-    // disable: false,
+    // disable: process.env.NODE_ENV === "development", // Disable PWA in development mode
+    disable: false,
     cacheOnFrontEndNav: true, // Caches pages navigated on frontend
     runtimeCaching: [
         {
@@ -45,19 +45,6 @@ const withPWA = require("next-pwa")({
 });
 
 module.exports = withPWA({
-    reactStrictMode: true,
-    async rewrites() {
-        return [
-            {
-                source: "/sw.js",
-                destination: "/_next/static/sw.js",
-            },
-        ];
-    },
-});
-
-
-module.exports = {
     poweredByHeader: false,
     generateEtags: false,
     reactStrictMode: true,
@@ -109,4 +96,4 @@ module.exports = {
             ],
         }
     }
-}
+})
