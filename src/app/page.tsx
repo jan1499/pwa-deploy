@@ -1,12 +1,10 @@
 "use client"
 
-import ServiceWorkerRegister from '@/components/common/ServiceWorkerRegister'
 import Login from './(auth)/login/page'
 
 const HomePg = () => {
   return (
     <div>
-      <ServiceWorkerRegister />
       <Login />
     </div>
   )
