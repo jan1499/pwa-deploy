@@ -8,7 +8,10 @@ export default function manifest(): MetadataRoute.Manifest {
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#000000',
-        display: 'standalone',
+        display: 'standalone',     //Removes browser UI (like address bar & tabs). Makes it feel like a native app.
+        // display: 'browser',       //Opens the app like a normal website in a browser.
+        // display: 'minimal-ui	',  //Shows limited browser controls (e.g., back & refresh buttons).
+        // display: 'fullscreen',  /Hides everything (no status bar, no navigation buttons).
         icons: [
             {
                 "src": "icon.ico",

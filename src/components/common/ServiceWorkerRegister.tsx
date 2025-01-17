@@ -2,11 +2,10 @@
 
 import { useEffect } from "react";
 
-// import { useEffect } from "react";
 
 export default function ServiceWorkerRegister() {
     useEffect(() => {
-        if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+        if ("serviceWorker" in navigator) {//checks if the browser supports service workers.
             navigator.serviceWorker
                 .register("/service-worker.js")
                 .then((registration) => {
